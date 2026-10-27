@@ -84,11 +84,10 @@
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       entry.target.classList.add('is-visible');
-      if (entry.target.classList.contains('signal')) entry.target.classList.add('is-active');
       revealObserver.unobserve(entry.target);
     });
   }, { threshold: 0.16, rootMargin: '0px 0px -6% 0px' });
-  document.querySelectorAll('.reveal, .signal').forEach(el => revealObserver.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
   if (location.hash) {
     const scrollToHash = () => setTimeout(() => document.querySelector(location.hash)?.scrollIntoView({ block: 'start' }), 80);
     if (document.readyState === 'complete') scrollToHash();

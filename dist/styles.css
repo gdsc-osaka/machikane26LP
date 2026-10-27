@@ -265,18 +265,17 @@ body.is-ready .hero__resolve-noise { animation:resolveNoise 2.6s steps(2,end) bo
 .reveal[data-shift="left"] { transform: translateX(-45px); }
 .reveal.is-visible { opacity: 1; transform: none; }
 
-.prologue { position:relative; z-index:1; padding:18vh 24px 12vh; overflow:hidden; text-align:center; background:linear-gradient(180deg,#030711,#07111e 48%,#030711); }
+.prologue { position:relative; z-index:1; padding:clamp(96px,12vw,150px) 24px clamp(110px,14vw,170px); overflow:hidden; text-align:center; background:linear-gradient(180deg,#030711,#07111e 48%,#030711); }
 .prologue::before { content:""; position:absolute; top:0; bottom:0; left:50%; width:1px; background:linear-gradient(transparent,rgba(120,213,228,.16) 15% 85%,transparent); }
-.prologue > * { position:relative; z-index:1; max-width:900px; margin-inline:auto; }
-.prologue__intro { min-height:62svh; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+.prologue > * { position:relative; z-index:1; max-width:680px; margin-inline:auto; }
+.prologue__intro { display:flex; flex-direction:column; justify-content:center; align-items:center; }
 .prologue__intro span { color:var(--blue); font:600 10px ui-monospace,monospace; letter-spacing:.38em; }
-.prologue h2 { margin:24px 0 0; font-family:"Yu Mincho","Hiragino Mincho ProN",serif; font-size:clamp(27px,4.3vw,52px); font-weight:400; line-height:1.8; letter-spacing:.06em; }
-.prologue__line { min-height:52svh; display:grid; place-items:center; }
-.prologue__line p { margin:0; font-family:"Yu Mincho","Hiragino Mincho ProN",serif; font-size:clamp(21px,3.5vw,38px); line-height:2; letter-spacing:.07em; }
-.prologue__line strong { color:var(--cyan); font-weight:500; }
-.prologue__final { min-height:72svh; display:flex; flex-direction:column; align-items:center; justify-content:center; }
-.prologue__final p { color:var(--muted); font-size:clamp(14px,2vw,18px); letter-spacing:.12em; }
-.prologue__final h2 { color:#edf8fa; font-size:clamp(36px,6vw,70px); line-height:1.55; }
+.prologue h2 { margin:20px 0 0; font-family:"Yu Mincho","Hiragino Mincho ProN",serif; font-size:clamp(20px,2.5vw,30px); font-weight:400; line-height:1.7; letter-spacing:.045em; }
+.prologue__body { max-width:620px; margin-top:clamp(48px,7vw,76px); font-family:"Yu Mincho","Hiragino Mincho ProN",serif; font-size:clamp(15px,1.55vw,18px); line-height:2.05; letter-spacing:.035em; text-wrap:pretty; }
+.prologue__body p { margin:0; }
+.prologue__body p + p { margin-top:1.35em; }
+.prologue__body strong { color:var(--cyan); font-size:1.12em; font-weight:500; letter-spacing:.055em; text-shadow:0 0 22px rgba(82,222,255,.22); }
+.prologue__closing { padding-top:.55em; }
 
 .story { background: linear-gradient(180deg, #020610, #06132c 55%, #071022); }
 .story__layout { display: grid; grid-template-columns: .85fr 1fr; gap: clamp(45px, 8vw, 120px); align-items: center; }
@@ -374,7 +373,7 @@ footer { padding:40px clamp(20px,4vw,60px); display:flex; align-items:center; ju
   .hero__copy { margin-top:0; font-size:14px; }.hero__meta span { min-width:0; padding:8px 12px; font-size:10px; }
   .hero__researcher--m { width:70vw; left:-25%; bottom:-7%; }.hero__researcher--f { width:70vw; right:-26%; bottom:-7%; }
   .hero__facility { width:1050px; }.hero--awaiting-kv .hero__facility { opacity:.20; }.hero__status { display:none; }.scroll-cue { bottom:12px; }
-  .prologue { padding-inline:20px; }.prologue__intro { min-height:56svh; }.prologue__line { min-height:48svh; }.prologue__line p { font-size:clamp(19px,5.6vw,25px); line-height:2.05; letter-spacing:.035em; }.prologue__final { min-height:64svh; }
+  .prologue { padding:88px 24px 110px; }.prologue h2 { font-size:20px; }.prologue__body { margin-top:44px; font-size:15px; line-height:2; letter-spacing:.025em; }.prologue__body p + p { margin-top:1.2em; }
   .section { padding:100px 22px; }.section__index { margin-bottom:46px; }
   .story__layout,.signal { grid-template-columns:1fr; }.story__copy { order:-1; }.story__visual { width:85%; margin:0 auto; }.terminal-text { padding-left:18px; }
   .recruit { min-height:90svh; }.paper-stamp { top:8%; font-size:9px; }.recruit__paper h2 { margin-top:65px; }.recruit__paper dl div { grid-template-columns:65px 1fr; font-size:12px; }
