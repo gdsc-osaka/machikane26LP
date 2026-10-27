@@ -9,7 +9,7 @@
   <meta name="reservation-url" content="">
   <title>星からの信号を解読せよ｜謎解き脱出ゲーム</title>
   <link rel="icon" href="./assets/s-icon.png" type="image/png">
-  <link rel="stylesheet" href="./styles.css?v=20261027-5">
+  <link rel="stylesheet" href="./styles.css?v=20261027-6">
 </head>
 <body class="is-loading">
   <div class="boot" id="boot" role="status" aria-live="polite" aria-label="観測システムを起動しています">
@@ -126,24 +126,45 @@
       </div>
     </section>
 
-    <section class="finale section">
-      <div class="finale__orbit" aria-hidden="true"><img src="./assets/signal-mark.png" alt="" loading="lazy" decoding="async"></div>
-      <p class="eyebrow reveal">TEMPORARY RESEARCHER RECRUITMENT</p>
-      <h2 class="reveal">あなたの観測を、<br><em>研究室は待っている。</em></h2>
-      <p class="reveal">臨時研究員として、未知の信号に挑め。</p>
-      <a class="reservation-button reservation-button--final reveal" href="#information" data-reservation-link>
-        <span>観測に参加する</span><small>RESERVE YOUR SESSION</small><i aria-hidden="true"></i>
-      </a>
-      <img class="finale__logo reveal" src="./assets/title-logo.png" alt="星からの信号を解読せよ" loading="lazy" decoding="async">
+    <section class="finale section" id="finale">
+      <div class="finale__stars" aria-hidden="true"></div>
+      <img class="finale__orbit" src="./assets/signal-mark.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <img class="finale__earth" src="./assets/earth.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="finale__content">
+        <p class="finale__eyebrow reveal">TEMPORARY RESEARCHER RECRUITMENT</p>
+        <img class="finale__logo reveal" src="./assets/title-logo.png" alt="謎解き脱出ゲーム 星からの信号を解読せよ" loading="lazy" decoding="async">
+        <h2 class="reveal">まだ見ぬ信号を、<br><em>一緒に解き明かそう。</em></h2>
+        <p class="finale__lead reveal">未知の観測に、あなたの力が必要です。<br>臨時研究員として、ぜひご参加ください。</p>
+        <a class="finale__reserve reveal" href="#information" data-reservation-link>
+          <span>観測に参加する<small>RESERVE YOUR SESSION</small></span><i aria-hidden="true"></i>
+        </a>
+        <ul class="finale__features reveal" aria-label="体験の特徴">
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18"></circle><path d="M24 13v12l8 5"></path></svg>
+            <span><small>所要時間</small>約25分</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 17 9v20l-17 9-17-9V14zM7 14l17 10 17-10M24 24v19"></path><circle cx="15" cy="27" r="2"></circle><circle cx="33" cy="27" r="2"></circle></svg>
+            <span>AR × 謎解き</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="16" r="7"></circle><circle cx="10" cy="20" r="5"></circle><circle cx="38" cy="20" r="5"></circle><path d="M12 40v-5c0-7 5-11 12-11s12 4 12 11v5M3 39v-4c0-5 3-8 8-8M45 39v-4c0-5-3-8-8-8"></path></svg>
+            <span><small>チーム</small>協力型</span>
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer__brand"><img src="./assets/s-icon.png" alt=""><span>UNIVERSITY ASTRONOMICAL<br>OBSERVATION LABORATORY</span></div>
-    <p>学園祭 謎解き脱出ゲーム 特設サイト</p>
-    <small>© 2026 Astronomical Observation Laboratory</small>
+    <div class="footer__signal-line" aria-hidden="true"><i></i></div>
+    <div class="footer__inner">
+      <div class="footer__brand"><img src="./assets/s-icon.png" alt=""><span><b>U.O.L.</b><small>宇宙観測研究室</small></span></div>
+      <p>学園祭 謎解き脱出ゲーム 特設サイト</p>
+      <small>© 2026 U.O.L. 宇宙観測研究室</small>
+    </div>
   </footer>
 
-  <script src="./app.js?v=20261027-5"></script>
+  <script src="./app.js?v=20261027-6"></script>
 </body>
 </html>
