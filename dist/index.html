@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#030611">
   <meta name="description" content="大学の宇宙観測研究室を舞台にした、AR謎解き脱出ゲーム『星からの信号を解読せよ』。臨時研究員として未知の信号を観測せよ。">
+  <!-- 予約ページ完成後、content="" にURLを入れると全予約ボタンへ反映されます -->
+  <meta name="reservation-url" content="">
   <title>星からの信号を解読せよ｜謎解き脱出ゲーム</title>
   <link rel="icon" href="./assets/s-icon.png" type="image/png">
-  <link rel="stylesheet" href="./styles.css?v=20261027-4">
+  <link rel="stylesheet" href="./styles.css?v=20261027-5">
 </head>
 <body class="is-loading">
   <div class="boot" id="boot" role="status" aria-live="polite" aria-label="観測システムを起動しています">
@@ -61,7 +63,7 @@
         <img class="hero-layer hero__girl" src="./assets/top/girl.png" alt="宇宙観測研究室の女性研究員">
         <img class="hero-layer hero__boy" src="./assets/top/boy.png" alt="宇宙観測研究室の男性研究員">
 
-        <a class="hero__reserve" href="#information"><span>予約する</span><i aria-hidden="true"></i></a>
+        <a class="hero__reserve" href="#information" data-reservation-link><span>予約する</span><i aria-hidden="true"></i></a>
         <a class="hero__scroll" href="#information"><span>SCROLL</span><i aria-hidden="true"></i></a>
         <div class="hero__resolve-noise" aria-hidden="true"></div>
       </div>
@@ -74,13 +76,18 @@
         <p class="eyebrow">OPEN LABORATORY</p>
         <h2>開催情報</h2>
         <dl>
-          <div><dt>開催日</dt><dd>学園祭開催期間<span>詳細は近日公開</span></dd></div>
-          <div><dt>会場</dt><dd>大学内 宇宙観測研究室<span>教室・アクセスは近日公開</span></dd></div>
+          <div><dt>開催日</dt><dd>11月1日〜11月3日</dd></div>
+          <div><dt>会場</dt><dd>学生会館 集会室1</dd></div>
           <div><dt>所要時間</dt><dd>約25分<span>別途説明・入替時間があります</span></dd></div>
           <div><dt>参加人数</dt><dd>1チーム 4〜5名程度<span>最大4チーム同時進行</span></dd></div>
           <div><dt>持ち物</dt><dd>スマートフォン<span>Webコンテンツの閲覧に使用します</span></dd></div>
         </dl>
-        <div class="information__notice">予約・整理券などの参加方法は、決まり次第このページでお知らせします。</div>
+        <div class="information__notice">
+          <p>参加予約は、専用の予約ページから受け付けます。</p>
+          <a class="reservation-button" href="#information" data-reservation-link>
+            <span>参加を予約する</span><small>RESERVATION</small><i aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -104,7 +111,7 @@
       <div class="section__index reveal"><span>FILE</span> 03 / EXPERIENCE</div>
       <div class="guide__heading">
         <p class="eyebrow reveal">RESEARCH OVERVIEW</p>
-        <h2 class="reveal">手に取る資料。<br>空間に現れる観測結果。</h2>
+        <h2 class="guide__title reveal"><span>手に取る資料。</span><span>空間に現れる観測結果。</span></h2>
         <p class="reveal">デジタルだけでは解けない。ARと物理資料を行き来する、チーム型の研究体験。</p>
       </div>
       <div class="guide__stats">
@@ -121,10 +128,12 @@
 
     <section class="finale section">
       <div class="finale__orbit" aria-hidden="true"><img src="./assets/signal-mark.png" alt="" loading="lazy" decoding="async"></div>
-      <p class="eyebrow reveal">THE OBSERVATION BEGINS HERE</p>
-      <h2 class="reveal">観測は、<br><em>ここから始まる。</em></h2>
-      <p class="reveal">臨時研究員としての参加をお待ちしています。</p>
-      <a class="cta reveal" href="#information"><span>参加情報を確認する</span><small>VIEW INFORMATION</small></a>
+      <p class="eyebrow reveal">TEMPORARY RESEARCHER RECRUITMENT</p>
+      <h2 class="reveal">あなたの観測を、<br><em>研究室は待っている。</em></h2>
+      <p class="reveal">臨時研究員として、未知の信号に挑め。</p>
+      <a class="reservation-button reservation-button--final reveal" href="#information" data-reservation-link>
+        <span>観測に参加する</span><small>RESERVE YOUR SESSION</small><i aria-hidden="true"></i>
+      </a>
       <img class="finale__logo reveal" src="./assets/title-logo.png" alt="星からの信号を解読せよ" loading="lazy" decoding="async">
     </section>
   </main>
@@ -135,6 +144,6 @@
     <small>© 2026 Astronomical Observation Laboratory</small>
   </footer>
 
-  <script src="./app.js?v=20261027-4"></script>
+  <script src="./app.js?v=20261027-5"></script>
 </body>
 </html>

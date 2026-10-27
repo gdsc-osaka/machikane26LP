@@ -1,6 +1,14 @@
 (() => {
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const body = document.body;
+  const reservationUrl = document.querySelector('meta[name="reservation-url"]')?.content.trim();
+  if (reservationUrl) {
+    document.querySelectorAll('[data-reservation-link]').forEach(link => {
+      link.href = reservationUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    });
+  }
   const boot = document.getElementById('boot');
   const progressBar = document.getElementById('boot-progress');
   const percent = document.getElementById('boot-percent');
