@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#030611">
+  <meta name="description" content="大学の宇宙観測研究室を舞台にした、AR謎解き脱出ゲーム『星からの信号を解読せよ』。臨時研究員として未知の信号を観測せよ。">
+  <title>星からの信号を解読せよ｜謎解き脱出ゲーム</title>
+  <link rel="icon" href="./assets/s-icon.png" type="image/png">
+  <link rel="stylesheet" href="./styles.css?v=20261027-3">
+</head>
+<body class="is-loading">
+  <div class="boot" id="boot" role="status" aria-live="polite" aria-label="観測システムを起動しています">
+    <div class="boot__noise"></div>
+    <div class="boot__title" aria-hidden="true">
+      <img src="./assets/top/main-logo.png" alt="" class="boot__mark">
+    </div>
+    <p class="boot__code">ASTRONOMICAL OBSERVATION LAB.</p>
+    <p class="boot__message" id="boot-message">観測システムを起動しています</p>
+    <div class="boot__progress"><span id="boot-progress"></span></div>
+    <p class="boot__percent"><span id="boot-percent">0</span>%</p>
+    <button class="boot__skip" id="boot-skip" type="button">SKIP</button>
+  </div>
+
+  <canvas class="starfield" id="starfield" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress"></span></div>
+
+  <header class="site-header" id="site-header">
+    <a class="site-header__brand" href="#top" aria-label="ページ先頭へ">
+      <img src="./assets/s-icon.png" alt="">
+      <span><b>U.O.L.</b><small>宇宙観測研究室</small></span>
+    </a>
+    <button class="menu-button" id="menu-button" type="button" aria-expanded="false" aria-controls="global-nav">
+      <span></span><span></span><span></span><em>MENU</em>
+    </button>
+    <nav class="global-nav" id="global-nav" aria-label="メインメニュー">
+      <a href="#story"><span>01</span>PROLOGUE</a>
+      <a href="#mission"><span>02</span>MISSION</a>
+      <a href="#guide"><span>03</span>GUIDE</a>
+      <a href="#information"><span>04</span>INFORMATION</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero--layered" id="top" aria-labelledby="hero-title">
+      <div class="hero__stage">
+        <img class="hero-layer hero__background" src="./assets/top/starfield.png" alt="" aria-hidden="true">
+        <img class="hero-layer hero__planet" src="./assets/top/planet.png" alt="" aria-hidden="true">
+        <img class="hero-layer hero__constellation" src="./assets/top/constellation.png" alt="" aria-hidden="true">
+        <img class="hero-layer hero__observatory" src="./assets/top/observatory.png" alt="" aria-hidden="true">
+        <img class="hero-layer hero__sparkles" src="./assets/top/sparkles.png" alt="" aria-hidden="true">
+        <picture class="hero-layer hero__meteor hero__meteor--motion" aria-hidden="true">
+          <source srcset="./assets/top/shooting-stars.webp" type="image/webp">
+          <img src="./assets/top/shooting-stars.gif" alt="">
+        </picture>
+        <img class="hero-layer hero__meteor hero__meteor--static" src="./assets/top/shooting-stars-static.png" alt="" aria-hidden="true">
+
+        <h1 class="hero-layer hero__main-logo" id="hero-title">
+          <img src="./assets/top/main-logo.png" width="1448" height="1086" alt="謎解き脱出ゲーム 星からの信号を解析せよ">
+        </h1>
+        <img class="hero-layer hero__girl" src="./assets/top/girl.png" alt="宇宙観測研究室の女性研究員">
+        <img class="hero-layer hero__boy" src="./assets/top/boy.png" alt="宇宙観測研究室の男性研究員">
+
+        <a class="hero__reserve" href="#information"><span>予約する</span><i aria-hidden="true"></i></a>
+        <a class="hero__scroll" href="#story"><span>SCROLL</span><i aria-hidden="true"></i></a>
+        <div class="hero__resolve-noise" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <section class="prologue" id="story" aria-labelledby="prologue-title">
+      <div class="prologue__intro reveal">
+        <span>PROLOGUE</span>
+        <h2 id="prologue-title">これは、あなたが参加する<br>ひとつの公開研究の記録。</h2>
+      </div>
+      <div class="prologue__line reveal">
+        <p>あなたは、学園祭で一般公開された<br><strong>大学の「宇宙観測研究室」</strong>を訪れる。</p>
+      </div>
+      <div class="prologue__line reveal">
+        <p>そこで参加したのは、<br>目に見えない未知物質を観測する<br><strong>特別な公開研究。</strong></p>
+      </div>
+      <div class="prologue__line reveal">
+        <p>しかし観測の途中、<br>研究室は<strong>正体不明の宇宙信号</strong>を受信。<br>装置は停止し、通信は途絶えた。</p>
+      </div>
+      <div class="prologue__line reveal">
+        <p>信号の到来方向を突き止められるのは、<br>観測データを手にした<br><strong>あなただけ。</strong></p>
+      </div>
+      <div class="prologue__final reveal">
+        <p>さあ、AR観測端末を手に。</p>
+        <h2>星からの信号を、<br>解読せよ。</h2>
+      </div>
+    </section>
+
+    <section class="signal section" id="signal">
+      <div class="signal__flash" aria-hidden="true"></div>
+      <div class="signal__radar reveal">
+        <img src="./assets/radar.png" alt="未知の宇宙信号を捉えたレーダー" loading="lazy" decoding="async">
+        <span class="signal__pulse"></span>
+      </div>
+      <div class="signal__copy">
+        <p class="warning reveal">WARNING / EXTERNAL SIGNAL DETECTED</p>
+        <h2 class="glitch reveal" data-text="その直後、">その直後、</h2>
+        <h2 class="glitch glitch--accent reveal" data-text="未知の信号を受信。">未知の信号を受信。</h2>
+        <p class="reveal">強い干渉により、観測装置が停止。<br>研究室は外部との通信を失った。</p>
+        <div class="signal-log reveal">
+          <span>21:07:14</span> SIGNAL LEVEL <b>CRITICAL</b><br>
+          <span>21:07:16</span> OBSERVATION DEVICE <b>OFFLINE</b><br>
+          <span>21:07:19</span> ORIGIN <b>UNKNOWN</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission section" id="mission">
+      <div class="section__index reveal"><span>FILE</span> 02 / MISSION</div>
+      <div class="mission__heading">
+        <p class="eyebrow reveal">EMERGENCY PROTOCOL</p>
+        <h2 class="reveal">観測を復旧し、<br>信号の到来方向を特定せよ。</h2>
+        <p class="reveal">残された研究資料とAR観測端末。<br>チームで情報を繋ぎ、研究室に起きた異常を解明せよ。</p>
+      </div>
+      <ol class="mission__steps">
+        <li class="reveal">
+          <span class="mission__no">01</span>
+          <div><small>RESTORE</small><h3>観測装置を復旧</h3><p>研究ファイルとメモから、失われた観測条件を導き出す。</p></div>
+        </li>
+        <li class="reveal">
+          <span class="mission__no">02</span>
+          <div><small>OBSERVE</small><h3>未知物質をAR観測</h3><p>床の観測孔に端末をかざし、目に見えない変化を捉える。</p></div>
+        </li>
+        <li class="reveal">
+          <span class="mission__no">03</span>
+          <div><small>ANALYZE</small><h3>星状パターンを解析</h3><p>物質表面に現れた配置から、信号が届いた方角を特定する。</p></div>
+        </li>
+        <li class="reveal">
+          <span class="mission__no">04</span>
+          <div><small>TRANSMIT</small><h3>停止信号を送信</h3><p>広域宇宙観測パネルを解析し、研究室の通信を取り戻せ。</p></div>
+        </li>
+      </ol>
+      <img class="mission__galaxy" src="./assets/galaxy.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    </section>
+
+    <section class="guide section" id="guide">
+      <div class="section__index reveal"><span>FILE</span> 03 / EXPERIENCE</div>
+      <div class="guide__heading">
+        <p class="eyebrow reveal">RESEARCH OVERVIEW</p>
+        <h2 class="reveal">手に取る資料。<br>空間に現れる観測結果。</h2>
+        <p class="reveal">デジタルだけでは解けない。ARと物理資料を行き来する、チーム型の研究体験。</p>
+      </div>
+      <div class="guide__stats">
+        <article class="stat reveal"><strong>25</strong><span>MINUTES<small>体験時間</small></span></article>
+        <article class="stat reveal"><strong>4–5</strong><span>MEMBERS<small>1チーム</small></span></article>
+        <article class="stat reveal"><strong>4</strong><span>TEAMS<small>最大同時進行</small></span></article>
+        <article class="stat reveal"><strong>1</strong><span>AR DEVICE<small>1チームにつき</small></span></article>
+      </div>
+      <div class="guide__notes reveal">
+        <span>BEGINNER FRIENDLY</span>
+        <p>謎解きが初めての方も参加できます。観測・資料調査・記録など、チームで役割を分けて挑戦してください。</p>
+      </div>
+    </section>
+
+    <section class="information section" id="information">
+      <img class="information__frame" src="./assets/cosmic-frame.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <div class="section__index reveal"><span>FILE</span> 04 / INFORMATION</div>
+      <div class="information__panel reveal">
+        <p class="eyebrow">OPEN LABORATORY</p>
+        <h2>開催情報</h2>
+        <dl>
+          <div><dt>開催日</dt><dd>学園祭開催期間<span>詳細は近日公開</span></dd></div>
+          <div><dt>会場</dt><dd>大学内 宇宙観測研究室<span>教室・アクセスは近日公開</span></dd></div>
+          <div><dt>所要時間</dt><dd>約25分<span>別途説明・入替時間があります</span></dd></div>
+          <div><dt>参加人数</dt><dd>1チーム 4〜5名程度<span>最大4チーム同時進行</span></dd></div>
+          <div><dt>持ち物</dt><dd>スマートフォン<span>Webコンテンツの閲覧に使用します</span></dd></div>
+        </dl>
+        <div class="information__notice">予約・整理券などの参加方法は、決まり次第このページでお知らせします。</div>
+      </div>
+    </section>
+
+    <section class="finale section">
+      <div class="finale__orbit" aria-hidden="true"><img src="./assets/signal-mark.png" alt="" loading="lazy" decoding="async"></div>
+      <p class="eyebrow reveal">THE SIGNAL IS STILL ARRIVING</p>
+      <h2 class="reveal">この信号を止められるのは、<br><em>観測したあなた</em>だけ。</h2>
+      <p class="reveal">公開研究への参加をお待ちしています。</p>
+      <a class="cta reveal" href="#information"><span>参加情報を確認する</span><small>VIEW INFORMATION</small></a>
+      <img class="finale__logo reveal" src="./assets/title-logo.png" alt="星からの信号を解読せよ" loading="lazy" decoding="async">
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer__brand"><img src="./assets/s-icon.png" alt=""><span>UNIVERSITY ASTRONOMICAL<br>OBSERVATION LABORATORY</span></div>
+    <p>学園祭 謎解き脱出ゲーム 特設サイト</p>
+    <small>© 2026 Astronomical Observation Laboratory</small>
+  </footer>
+
+  <script src="./app.js?v=20261027-3"></script>
+</body>
+</html>
