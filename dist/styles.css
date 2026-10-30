@@ -292,7 +292,7 @@ body.is-ready .hero__resolve-noise { animation:resolveNoise 2.6s steps(2,end) bo
 .terminal-text strong { color: #fff; border-bottom: 1px solid var(--pink); }
 .section-corner { position: absolute; right: -8%; top: 0; width: 54%; opacity: .18; pointer-events: none; }
 
-.recruit { min-height: 80vh; display: grid; place-items: center; background: linear-gradient(rgba(1,5,15,.65), rgba(1,5,15,.85)), url("./assets/observatory.png") center bottom/cover no-repeat; }
+.recruit { min-height: 80vh; display: grid; place-items: center; background: linear-gradient(rgba(1,5,15,.65), rgba(1,5,15,.85)), url("./assets/observatory.webp") center bottom/cover no-repeat; }
 .recruit__paper { position: relative; width: min(760px, 100%); padding: clamp(32px, 6vw, 72px); color: #0a2540; background: linear-gradient(135deg, rgba(243,252,255,.98), rgba(205,236,246,.94)); box-shadow: 0 30px 80px #000, inset 0 0 0 1px #fff; clip-path: polygon(2% 0, 100% 0, 100% 96%, 97% 100%, 0 100%, 0 3%); transform: rotate(-1deg); }
 .recruit__paper::after { content: "OBSERVATION LAB."; position: absolute; right: -2%; bottom: 8%; font: 800 70px/1 ui-monospace, monospace; color: rgba(7,59,91,.05); transform: rotate(-90deg); transform-origin: center; }
 .paper-code { font: 10px ui-monospace, monospace; letter-spacing: .16em; border-bottom: 1px solid rgba(5,47,75,.25); padding-bottom: 16px; }
