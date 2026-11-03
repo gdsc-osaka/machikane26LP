@@ -184,6 +184,8 @@ body.is-ready .hero__content { opacity: 1; transform: none; }
   transform:translateY(-8px);
   transition:background .25s,border-color .25s;
 }
+.hero__reserve > span { display:flex; flex-direction:column; align-items:center; gap:3px; line-height:1.2; }
+.hero__reserve small { color:#d9f6ff; font-size:9px; letter-spacing:.04em; white-space:nowrap; }
 .hero__reserve:hover { background:rgba(27,68,119,.78); border-color:#fff; }
 .hero__reserve::before { content:"✦"; position:absolute; left:12%; color:#d9f6ff; font-size:.8em; }
 .hero__reserve i { position:absolute; right:11%; width:7px; height:7px; border-top:1px solid #fff; border-right:1px solid #fff; transform:rotate(45deg); }
